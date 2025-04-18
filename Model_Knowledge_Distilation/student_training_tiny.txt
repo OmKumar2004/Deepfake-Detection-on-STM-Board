@@ -1,0 +1,25 @@
+nohup: ignoring input
+/usr/local/lib/python3.10/dist-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Epoch 1/10 | Loss: 2659.1408 | Train Acc: 83.73%
+Validation Accuracy: 83.74%
+Epoch 2/10 | Loss: 2617.5593 | Train Acc: 83.74%
+Validation Accuracy: 83.74%
+Epoch 3/10 | Loss: 2548.0692 | Train Acc: 83.74%
+Validation Accuracy: 83.74%
+Epoch 4/10 | Loss: 2440.4616 | Train Acc: 83.80%
+Validation Accuracy: 83.82%
+Epoch 5/10 | Loss: 2350.8642 | Train Acc: 84.05%
+Validation Accuracy: 83.97%
+Epoch 6/10 | Loss: 2276.6375 | Train Acc: 84.37%
+Validation Accuracy: 84.15%
+Epoch 7/10 | Loss: 2189.9062 | Train Acc: 84.96%
+Validation Accuracy: 84.75%
+Epoch 8/10 | Loss: 2105.5411 | Train Acc: 85.61%
+Validation Accuracy: 85.03%
+Epoch 9/10 | Loss: 2041.2047 | Train Acc: 86.17%
+Validation Accuracy: 87.40%
+Epoch 10/10 | Loss: 1969.0867 | Train Acc: 86.75%
+Validation Accuracy: 87.24%

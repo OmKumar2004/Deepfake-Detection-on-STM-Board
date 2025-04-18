@@ -1,0 +1,36 @@
+nohup: ignoring input
+/usr/local/lib/python3.10/dist-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+{'fake': 0, 'real': 1}
+Starting epoch 1/10
+Epoch [1/10], Loss: 0.0450, Accuracy: 98.32%
+Validation Loss: 0.0092, Validation Accuracy: 99.73%
+Starting epoch 2/10
+Epoch [2/10], Loss: 0.0081, Accuracy: 99.75%
+Validation Loss: 0.0057, Validation Accuracy: 99.78%
+Starting epoch 3/10
+Epoch [3/10], Loss: 0.0058, Accuracy: 99.83%
+Validation Loss: 0.0011, Validation Accuracy: 99.99%
+Starting epoch 4/10
+Epoch [4/10], Loss: 0.0052, Accuracy: 99.84%
+Validation Loss: 0.0028, Validation Accuracy: 99.93%
+Starting epoch 5/10
+Epoch [5/10], Loss: 0.0037, Accuracy: 99.89%
+Validation Loss: 0.0232, Validation Accuracy: 99.10%
+Starting epoch 6/10
+Epoch [6/10], Loss: 0.0043, Accuracy: 99.87%
+Validation Loss: 0.0165, Validation Accuracy: 99.47%
+Starting epoch 7/10
+Epoch [7/10], Loss: 0.0027, Accuracy: 99.93%
+Validation Loss: 0.0075, Validation Accuracy: 99.77%
+Starting epoch 8/10
+Epoch [8/10], Loss: 0.0028, Accuracy: 99.92%
+Validation Loss: 0.0015, Validation Accuracy: 99.96%
+Starting epoch 9/10
+Epoch [9/10], Loss: 0.0031, Accuracy: 99.90%
+Validation Loss: 0.0021, Validation Accuracy: 99.92%
+Starting epoch 10/10
+Epoch [10/10], Loss: 0.0029, Accuracy: 99.95%
+Validation Loss: 0.0069, Validation Accuracy: 99.75%

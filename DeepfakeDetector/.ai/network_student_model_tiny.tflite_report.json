@@ -1,0 +1,644 @@
+{
+    "_allocate_inputs": 4,
+    "_allocate_outputs": 4,
+    "cli_parameters": "generate --target stm32f4 --name network -m C:/OM/8 Embedded Systems/student_model_tiny.tflite --compression none --verbosity 1 --workspace C:/Users/omkum/AppData/Local/Temp/mxAI_workspace6619880063179004953605028136514168 --output C:/Users/omkum/.stm32cubemx/network_output",
+    "cli_version": {
+        "extra": "20049",
+        "major": 2,
+        "micro": 0,
+        "minor": 0
+    },
+    "cli_version_str": "2.0.0-20049",
+    "code_size": 0,
+    "compression": [],
+    "date_time": "2025-04-16T05:05:10+0530",
+    "error": 0,
+    "error_str": [],
+    "exec_cmd": "generate",
+    "exec_duration": 0.0,
+    "hash": "0x499e41b5b85c5874dd103638f4f86abc",
+    "inputs": [
+        "serving_default_input0"
+    ],
+    "layers": [
+        {
+            "c_id": [
+                0,
+                1
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 49152,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        64,
+                        64,
+                        3
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [],
+            "name": "serving_default_input0",
+            "original": "",
+            "type": "Input"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 52272,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        66,
+                        3,
+                        66
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [
+                "serving_default_input0"
+            ],
+            "name": "pad_0",
+            "original": "PAD",
+            "type": "Pad"
+        },
+        {
+            "c_id": [
+                2
+            ],
+            "extras": {
+                "n_macc": 6534,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 52272,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        66,
+                        3,
+                        66
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 1,
+            "inputs": [
+                "pad_0"
+            ],
+            "name": "transpose_1",
+            "original": "TRANSPOSE",
+            "type": "Transpose"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 442372,
+                "n_params": 112,
+                "psize": 448,
+                "rom_output": {
+                    "c_size": 16384,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        32,
+                        4,
+                        32
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 2,
+            "inputs": [
+                "transpose_1"
+            ],
+            "name": "conv2d_2",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 16384,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 2,
+            "inputs": [
+                "conv2d_2"
+            ],
+            "name": "nl_2_nl",
+            "original": "CONV_2D",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                3
+            ],
+            "extras": {
+                "n_macc": 16384,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 448
+            },
+            "id": 3,
+            "inputs": [
+                "nl_2_nl"
+            ],
+            "name": "pool_3",
+            "original": "MAX_POOL_2D",
+            "type": "Pool"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 2048,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 4,
+            "inputs": [
+                "pool_3"
+            ],
+            "name": "transpose_4",
+            "original": "TRANSPOSE",
+            "type": "Transpose"
+        },
+        {
+            "c_id": [
+                4,
+                5
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 18496,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        34,
+                        4,
+                        34
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 5,
+            "inputs": [
+                "transpose_4"
+            ],
+            "name": "pad_5",
+            "original": "PAD",
+            "type": "Pad"
+        },
+        {
+            "c_id": [
+                6
+            ],
+            "extras": {
+                "n_macc": 2312,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 18496,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        34,
+                        4,
+                        34
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 6,
+            "inputs": [
+                "pad_5"
+            ],
+            "name": "transpose_6",
+            "original": "TRANSPOSE",
+            "type": "Transpose"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 294920,
+                "n_params": 296,
+                "psize": 1184,
+                "rom_output": {
+                    "c_size": 8192,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        16,
+                        8,
+                        16
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 7,
+            "inputs": [
+                "transpose_6"
+            ],
+            "name": "conv2d_7",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 8192,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 7,
+            "inputs": [
+                "conv2d_7"
+            ],
+            "name": "nl_7_nl",
+            "original": "CONV_2D",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                7
+            ],
+            "extras": {
+                "n_macc": 8192,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 1184
+            },
+            "id": 8,
+            "inputs": [
+                "nl_7_nl"
+            ],
+            "name": "pool_8",
+            "original": "MAX_POOL_2D",
+            "type": "Pool"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 1024,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 9,
+            "inputs": [
+                "pool_8"
+            ],
+            "name": "transpose_9",
+            "original": "TRANSPOSE",
+            "type": "Transpose"
+        },
+        {
+            "c_id": [
+                8,
+                9
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 10368,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        18,
+                        8,
+                        18
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 10,
+            "inputs": [
+                "transpose_9"
+            ],
+            "name": "pad_10",
+            "original": "PAD",
+            "type": "Pad"
+        },
+        {
+            "c_id": [
+                10
+            ],
+            "extras": {
+                "n_macc": 1296,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 10368,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        18,
+                        8,
+                        18
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 11,
+            "inputs": [
+                "pad_10"
+            ],
+            "name": "transpose_11",
+            "original": "TRANSPOSE",
+            "type": "Transpose"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 294928,
+                "n_params": 1168,
+                "psize": 1216,
+                "rom_output": {
+                    "c_size": 4096,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        8,
+                        16,
+                        8
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 12,
+            "inputs": [
+                "transpose_11"
+            ],
+            "name": "conv2d_12",
+            "original": "CONV_2D",
+            "type": "Conv2D"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 4096,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 12,
+            "inputs": [
+                "conv2d_12"
+            ],
+            "name": "nl_12_nl",
+            "original": "CONV_2D",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                11
+            ],
+            "extras": {
+                "n_macc": 4096,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 4672
+            },
+            "id": 13,
+            "inputs": [
+                "nl_12_nl"
+            ],
+            "name": "pool_13",
+            "original": "MAX_POOL_2D",
+            "type": "Pool"
+        },
+        {
+            "c_id": [
+                12
+            ],
+            "extras": {
+                "n_macc": 1024,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 1024,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        4,
+                        16,
+                        4
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 14,
+            "inputs": [
+                "pool_13"
+            ],
+            "name": "pool_14",
+            "original": "MAX_POOL_2D",
+            "type": "Pool"
+        },
+        {
+            "c_id": [
+                13
+            ],
+            "extras": {
+                "n_macc": 128,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 1024,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        4,
+                        4,
+                        16
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 15,
+            "inputs": [
+                "pool_14"
+            ],
+            "name": "transpose_15",
+            "original": "TRANSPOSE",
+            "type": "Transpose"
+        },
+        {
+            "c_id": [
+                14,
+                15
+            ],
+            "extras": {
+                "n_macc": 512,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 64,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1,
+                        16
+                    ]
+                },
+                "rom_size": 8
+            },
+            "id": 16,
+            "inputs": [
+                "transpose_15"
+            ],
+            "name": "reduce_16",
+            "original": "MEAN",
+            "type": "Reduce"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 17,
+            "inputs": [
+                "reduce_16"
+            ],
+            "name": "reshape_17",
+            "original": "RESHAPE",
+            "type": "Reshape"
+        },
+        {
+            "c_id": [
+                16
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 32,
+                "psize": 128,
+                "rom_size": 136
+            },
+            "id": 18,
+            "inputs": [],
+            "name": "MatMul",
+            "original": "",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 2,
+                "psize": 8,
+                "rom_size": 0
+            },
+            "id": 18,
+            "inputs": [],
+            "name": "Const1",
+            "original": "",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 34,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 8,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        2
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 18,
+            "inputs": [
+                "reshape_17",
+                "MatMul",
+                "Const1"
+            ],
+            "name": "gemm_18",
+            "original": "FULLY_CONNECTED",
+            "type": "Gemm"
+        }
+    ],
+    "model_files": [
+        "C:\\OM\\8 Embedded Systems\\student_model_tiny.tflite"
+    ],
+    "model_n_params": 1610,
+    "model_name": "student_model_tiny",
+    "model_size": 2984,
+    "model_type": "tflite",
+    "name": "network",
+    "outputs": [
+        "gemm_18"
+    ],
+    "ram_io_size": [
+        0,
+        0
+    ],
+    "ram_size": 104544,
+    "report_version": 1.1,
+    "rom_cfact": 1.0,
+    "rom_heap_inspector": 2048,
+    "rom_inputs": [
+        {
+            "c_size": 49152,
+            "c_type": "float",
+            "name": "serving_default_input0"
+        }
+    ],
+    "rom_n_macc": 1110396,
+    "rom_outputs": [
+        {
+            "c_size": 8,
+            "c_type": "float",
+            "name": "gemm_18"
+        }
+    ],
+    "rom_size": 6448,
+    "strategy": "",
+    "tools_api_version": "2.0.0-20049",
+    "tools_version": "2.0.0-20049",
+    "val_error": -1.0,
+    "val_error_desc": "None (None) #-1",
+    "val_metrics": []
+}
